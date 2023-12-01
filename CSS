@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'MuseModerno' , cursive;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0 , 0 , 0 , 0.1) , rgba(0 , 0 , 0 , 0.1)) ,  url(background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/*-------------------------------------------------------------------------------------------------- Header Design ------------------------------------------------------------------------------ */
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: indx 0;
+  background:transparent;
+  padding: 30px 13%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    position: relative;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 45px;
+}
+
+.navbar a::after {
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    border-radius: 8px;
+    transition: all ease .45s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.btnLogin-popup {
+    display: inline-block;
+    padding: 9px 32px;
+    background: transparent;
+     color: #fff;
+     border: 2px solid #fff;
+     border-radius: 8px;
+     font-size: 17px;
+     font-weight: 400;
+     margin-left: 45px;
+     transition: all ease .45s;
+}
+
+.btnLogin-popup:hover {
+    transform: scale(1.1);
+    background: #fff;
+    border: 2px solid #fff;
+    color: #162928;
+}      
