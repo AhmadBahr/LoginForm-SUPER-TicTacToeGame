@@ -210,3 +210,14 @@ header {
 .register p a:hover {
     text-decoration: underline;
 }
+
+/*-------------------------------------------------------------------------------------------------- Play button Styling------------------------------------------------------------------------------ */
+
+.Play-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:  #162928; 
+    color: white; 
+    text-decoration: none;
+    border-radius: 5px; 
+  }
