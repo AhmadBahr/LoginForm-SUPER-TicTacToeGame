@@ -149,3 +149,16 @@
             $('.X-won-overlay, .O-won-overlay').remove(); 
         }
     </script>
+
+ <!-----------------------------------------------------------------------------------------HEADER TAG------------------------------------------------------------------------------------->
+</head>
+<body>
+    <h1>Ultimate Tic-Tac-Toe!</h1>
+    <div id="highScores">
+        <p>High Score X: <span id="scoreX">0</span></p>
+        <p>High Score O: <span id="scoreO">0</span></p>
+    </div>
+    <p><a href="#" onclick="resetGame()">Restart</a></p>
+</body>
+</html>
+
