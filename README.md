@@ -58,5 +58,6 @@ The CSS is used to draw the symbols and give life to each symbol purely for visu
 
 The JQuery is introduced to give the logic of how the game will work and give it the rules and how its going to work.
 So that the players can play.
+
 ![Capture3](https://github.com/AhmadBahr/LoginForm-SUPER-TicTacToeGame/assets/150359856/672abc97-3635-4221-af7c-7d6bb1f7d2ec)
 
