@@ -1,4 +1,3 @@
-
 const container = document.querySelector('.container');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
@@ -18,5 +17,5 @@ btnPopup.addEventListener('click', () => {
 });
 
 document.getElementById('playButton').addEventListener('click'), function() {
-    window.location.href = 'YourCSharpPage.aspx';
+    window.location.href = 'Super-TicTacToeGame.html';
 }
