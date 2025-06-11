@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'MuseModerno' , cursive;
+    font-family: 'MuseoModerno', sans-serif;
     box-sizing: border-box;
     border: none;
     outline: none;
@@ -13,9 +13,9 @@ body {
     width: 100%;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(rgba(0 , 0 , 0 , 0.1) , rgba(0 , 0 , 0 , 0.1)) ,  url(background.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(background.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -23,15 +23,21 @@ body {
 /*-------------------------------------------------------------------------------------------------- Header Design ------------------------------------------------------------------------------ */
 
 header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  right: 0;
-  z-index: indx 0;
-  background:transparent;
-  padding: 30px 13%;
-  display: flex;
-  justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(22, 41, 40, 0.9);
+    padding: 20px 13%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    border-radius: 50%;
+    border: 2px solid #fff;
 }
 
 .logo {
@@ -43,6 +49,7 @@ header {
 .navbar {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .navbar a {
@@ -50,87 +57,74 @@ header {
     color: #fff;
     font-size: 17px;
     font-weight: 500;
-    margin-left: 45px;
-}
-
-.navbar a::after {
-    position: absolute;
-    content: '';
-    right: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    border-radius: 8px;
     transition: all ease .45s;
 }
 
-.navbar a:hover::after {
-    width: 100%;
+.navbar a:hover {
+    color: #4CAF50;
 }
 
 .btnLogin-popup {
     display: inline-block;
     padding: 9px 32px;
     background: transparent;
-     color: #fff;
-     border: 2px solid #fff;
-     border-radius: 8px;
-     font-size: 17px;
-     font-weight: 400;
-     margin-left: 45px;
-     transition: all ease .45s;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all ease .45s;
 }
 
 .btnLogin-popup:hover {
     transform: scale(1.1);
     background: #fff;
-    border: 2px solid #fff;
     color: #162928;
 }
 
 /*-------------------------------------------------------------------------------------------------- Container Styling ------------------------------------------------------------------------------ */
 
 .container {
-    text-align: center;
-    background: transparent;
+    margin-top: 120px;
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 24px;
-    border: 3px solid rgba(257 , 257 , 257 , .4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(25px);
-    box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: all ease .35s;
 }
 
 .main-box {
-    padding: 50px;
+    padding: 40px;
     width: 100%;
 }
 
 .main-box h1 {
     color: #162938;
     text-align: center;
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 800;
+    margin-bottom: 30px;
 }
 
 .input-box {
     position: relative;
     height: 52px;
-    border-bottom: 2px solid  #162938;
+    border-bottom: 2px solid #162938;
     margin: 32px 0;
 }
- 
+
 .input-box label {
     position: absolute;
     left: 6px;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-    color:  #162938;
+    color: #162938;
     font-size: 17px;
     font-weight: 500;
     transition: all ease .45s;
@@ -146,17 +140,25 @@ header {
     padding: 0 30px 0 6px;
 }
 
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -3px;
+    font-size: 14px;
+    color: #4CAF50;
+}
+
 .input-box .icon {
     position: absolute;
     right: 9px;
     font-size: 19px;
     color: #162938;
-    line-height: 19px;
+    line-height: 52px;
+    transition: all ease .45s;
 }
 
-    .input-box input :focus~label,
-    .input-box input :valid~label {
-        top:-3px;
+.input-box input:focus ~ .icon,
+.input-box input:valid ~ .icon {
+    color: #4CAF50;
 }
 
 .check {
@@ -166,19 +168,28 @@ header {
     margin: -14px 0 15px;
     display: flex;
     justify-content: space-between;
-    display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
+
+.check label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
 .check label input {
-    margin-left: 5px;
-    accent-color: #162928;
+    accent-color: #4CAF50;
+    cursor: pointer;
 }
 
 .check a {
     color: #162928;
+    transition: all ease .45s;
 }
 
 .check a:hover {
+    color: #4CAF50;
     text-decoration: underline;
 }
 
@@ -191,6 +202,12 @@ header {
     font-weight: 600;
     color: #fff;
     cursor: pointer;
+    transition: all ease .45s;
+}
+
+.main-btn:hover {
+    background-color: #4CAF50;
+    transform: scale(1.02);
 }
 
 .register {
@@ -199,12 +216,12 @@ header {
     font-size: 15px;
     font-weight: 500;
     margin: 30px 0 10px;
-    font-weight: bold;
 }
 
 .register p a {
     font-weight: 600;
-    color: #162928;
+    color: #4CAF50;
+    transition: all ease .45s;
 }
 
 .register p a:hover {
@@ -216,9 +233,377 @@ header {
 .Play-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color:  #162928; 
-    color: white; 
+    background-color: #162928;
+    color: white;
     text-decoration: none;
-    border-radius: 5px; 
-  }
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Game Container */
+.game-container {
+    margin-top: 120px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+#highScores {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #162938;
+}
+
+#highScores p {
+    margin: 5px 0;
+}
+
+/* Coin Flip Animation */
+#coin-flip {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.coin {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in;
+}
+
+.coin.flipped {
+    transform: rotateY(180deg);
+}
+
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.front {
+    background: #4CAF50;
+    transform: rotateY(0deg);
+}
+
+.back {
+    background: #2196F3;
+    transform: rotateY(180deg);
+}
+
+#coin-flip p {
+    font-size: 1.2rem;
+    color: #162938;
+    margin-top: 10px;
+}
+
+/* Game Status Updates */
+.hidden {
+    display: none !important;
+}
+
+#game-status {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(22, 41, 40, 0.1);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: #162938;
+    transition: all 0.3s ease;
+}
+
+#game-status.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+#game {
+    transition: all 0.3s ease;
+}
+
+#game.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+/* Game Status */
+#game-status {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(22, 41, 40, 0.1);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: #162938;
+}
+
+#game-status p {
+    margin: 5px 0;
+}
+
+#current-player {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+#grid-status {
+    font-style: italic;
+    color: #2196F3;
+}
+
+#square-status {
+    font-style: italic;
+    color: #FF9800;
+}
+
+/* Game Board */
+#game {
+    display: inline-block;
+    margin: 20px auto;
+}
+
+.grid {
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+    border: 2px solid #162938;
+    margin: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.current-grid {
+    background-color: rgba(76, 175, 80, 0.2);
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.current-grid::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+.button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    background-color: #fff;
+    border: 1px solid #162938;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.button:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    transform: scale(1.1);
+}
+
+.current-square {
+    background-color: rgba(255, 152, 0, 0.2);
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.4);
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.current-square::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 2px solid #FF9800;
+    border-radius: 3px;
+    animation: pulse-square 1s infinite;
+}
+
+@keyframes pulse-square {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 5px rgba(255, 152, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
+    }
+}
+
+.X-selected {
+    color: #4CAF50;
+}
+
+.O-selected {
+    color: #2196F3;
+}
+
+.X-won, .O-won {
+    background-color: transparent;
+}
+
+.no-win {
+    background-color: rgba(158, 158, 158, 0.2);
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    pointer-events: none;
+}
+
+.X-won-overlay {
+    color: #4CAF50;
+}
+
+.O-won-overlay {
+    color: #2196F3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .navbar {
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .btnLogin-popup {
+        padding: 7px 20px;
+        font-size: 14px;
+    }
+
+    .container {
+        margin: 100px 20px 0;
+    }
+
+    .main-box {
+        padding: 30px 20px;
+    }
+
+    .main-box h1 {
+        font-size: 30px;
+    }
+
+    .button {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    .overlay-container {
+        font-size: 60px;
+    }
+
+    .Play-link {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .navbar {
+        gap: 5px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .btnLogin-popup {
+        padding: 5px 15px;
+        font-size: 12px;
+    }
+
+    .main-box h1 {
+        font-size: 26px;
+    }
+
+    .input-box {
+        height: 45px;
+    }
+
+    .input-box label {
+        font-size: 15px;
+    }
+
+    .input-box input {
+        font-size: 15px;
+    }
+
+    .check {
+        font-size: 13px;
+    }
+
+    .button {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    .overlay-container {
+        font-size: 40px;
+    }
+
+    .container {
+        margin: 80px 10px 0;
+    }
+}
 
